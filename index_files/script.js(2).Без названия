@@ -1,0 +1,80 @@
+let home_filials_block = document.getElementById( 'home_filials_block' );
+
+let home_filials = document.getElementById( 'home_filials' ) || false;
+let home_filials_select = home_filials.querySelector( '[name=home_filials_select]' );
+
+var xmlhttpfilials = new XMLHttpRequest();
+var xmlhttpfilials2 = new XMLHttpRequest();
+
+home_filials_select.addEventListener( 'change', function(){
+	xmlhttpfilials.open( "POST", "/local/templates/main/components/bxcustom/empty/home-filials-block/ajax_filial.php" );
+	xmlhttpfilials.setRequestHeader( "Content-Type", "application/json" );
+	xmlhttpfilials.addEventListener( "readystatechange", () => {
+		if( xmlhttpfilials.readyState === 4 && xmlhttpfilials.status === 200 ){
+			console.log(xmlhttpfilials);
+			home_filials_block.innerHTML = xmlhttpfilials.response;
+			btns = document.querySelectorAll( '.btn' );
+			btnsHandler();
+
+			xmlhttpfilials2.open( "POST", "/include/ajax/get_filials_ajax.php" );
+	xmlhttpfilials2.setRequestHeader( "Content-Type", "application/json" );
+	xmlhttpfilials2.addEventListener( "readystatechange", () => {
+		if( xmlhttpfilials2.readyState === 4 && xmlhttpfilials2.status === 200 ){
+
+			ymaps.ready(function () {
+				let myMap = new ymaps.Map("map", {
+					center: [JSON.parse(xmlhttpfilials2.response)["lat"], JSON.parse(xmlhttpfilials2.response)["log"]],
+					zoom: 14
+				});
+				myMap.controls.remove('geolocationControl'); 
+				myMap.controls.remove('searchControl'); 
+				myMap.controls.remove('trafficControl'); 
+				myMap.controls.remove('typeSelector'); 
+				myMap.controls.remove('fullscreenControl'); 
+				myMap.controls.remove('rulerControl');
+
+				var markers = [
+						{
+							id: 'placemark0',
+							coord: [JSON.parse(xmlhttpfilials2.response)["lat"], JSON.parse(xmlhttpfilials2.response)["log"]],
+							// title: "'"+JSON.parse(xmlhttpfilials2.response)["NAME"]+"'",
+							// text: "'"+JSON.parse(xmlhttpfilials2.response)["ADDRESS"]+"'",
+							// footer: "'"+JSON.parse(xmlhttpfilials2.response)["WORK_TIME"]+"'",
+							__placemark: null
+						}
+					];
+
+				for (var i = 0, placemark; i < markers.length; i++) {
+					placemark = markers[i];
+					placemark.__placemark = new ymaps.Placemark(placemark.coord, {
+					balloonContentHeader: placemark.title,
+					balloonContentBody: placemark.text,
+					balloonContentFooter: placemark.footer,
+					}, {
+					iconLayout: 'default#image',
+					iconImageHref: '/local/templates/main/img/map/balun.svg',
+					iconImageSize: [50, 50],
+					iconImageOffset: [-25, -25]
+					});
+
+					myMap.geoObjects.add(placemark.__placemark);
+				}
+
+				
+			});
+
+		}
+	} );
+	xmlhttpfilials2.send( JSON.stringify( {
+		'filial_id': home_filials_select.value
+	} ) );
+		}
+	} );
+	xmlhttpfilials.send( JSON.stringify( {
+		'filial_id': home_filials_select.value
+	} ) );
+
+
+	
+
+} );
