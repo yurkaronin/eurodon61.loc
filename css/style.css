@@ -1,0 +1,118 @@
+.item-menu-for-mobile {
+  display: none;
+}
+
+.item-menu-for-desktop {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .item-menu-for-mobile {
+    display: block;
+  }
+  .item-menu-for-desktop {
+    display: none;
+  }
+}
+.header--new {
+  border-bottom: 1px solid;
+  border-color: #EBEDEF;
+}
+.header--new .button--icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.header--new__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  gap: 24px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
+  border-color: #EBEDEF;
+}
+.header--new__logo-link {
+  transition: all 0.3s;
+}
+.header--new__logo-link:hover svg path {
+  fill: #303F82;
+}
+.header--new__buttons {
+  display: flex;
+  max-width: 265px;
+  gap: 24px;
+}
+.header--new__buttons .button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header--new .button--icon {
+  transition: all 0.3s;
+}
+.header--new .button--icon:hover svg path {
+  stroke: #fff;
+}
+.header--new .button-search {
+  border: none;
+}
+.header--new .button-menu {
+  border: none;
+}
+.header--new .button-menu.active::after {
+  display: none;
+}
+.header--new__main-button {
+  display: none;
+}
+.header--new__search-button {
+  display: none;
+}
+.header--new__tel {
+  margin-left: auto;
+}
+.header--new__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.header--new__nav {
+  width: calc(100% - 24px - 36px);
+}
+.header--new__bottom-search {
+  max-width: 36px;
+}
+.header--new .main-nav__list {
+  justify-content: space-between;
+}
+.header--new .main-nav__link {
+  padding: 10px 0 13px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.header--new .main-nav__sublist {
+  max-width: 408px;
+  padding: 25px 24px 27px 32px;
+  line-height: 1.2;
+  gap: 24px;
+}
+@media (max-width: 1390px) {
+  .header--new__main-button {
+    display: block;
+  }
+  .header--new__search-button {
+    display: block;
+  }
+}
+
+.menu-search {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */

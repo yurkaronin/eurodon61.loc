@@ -1,0 +1,147 @@
+.item-menu-for-mobile {
+  display: none;
+}
+
+.item-menu-for-desktop {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .item-menu-for-mobile {
+    display: block;
+  }
+
+  .item-menu-for-desktop {
+    display: none;
+  }
+}
+
+.header--new {
+  border-bottom: 1px solid;
+  border-color: #EBEDEF;
+
+  .button--icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 24px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+    border-color: #EBEDEF;
+  }
+
+  &__logo-link {
+    transition: all 0.3s;
+
+    &:hover {
+      svg path {
+        fill: #303F82;
+      }
+    }
+
+  }
+
+  &__buttons {
+    display: flex;
+    max-width: 265px;
+    gap: 24px;
+
+    .button {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .button--icon {
+    transition: all 0.3s;
+  }
+
+  .button--icon:hover {
+    svg path {
+      stroke: #fff;
+    }
+  }
+
+  .button-search {
+    border: none;
+  }
+
+  .button-menu {
+    border: none;
+  }
+
+  .button-menu.active::after {
+    display: none;
+  }
+
+  &__main-button {
+    display: none;
+  }
+
+  &__search-button {
+    display: none;
+  }
+
+  &__tel {
+    margin-left: auto;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__nav {
+    width: calc(100% - 24px - 36px);
+  }
+
+  &__bottom-search {
+    max-width: 36px;
+  }
+
+  .main-nav__list {
+    justify-content: space-between;
+  }
+
+  .main-nav__link {
+    padding: 10px 0 13px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .main-nav__sublist {
+    max-width: 408px;
+    padding: 25px 24px 27px 32px;
+    line-height: 1.2;
+    gap: 24px;
+  }
+
+  @media (max-width: 1390px) {
+    &__main-button {
+      display: block;
+    }
+
+    &__search-button {
+      display: block;
+    }
+  }
+}
+
+.menu-search {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
