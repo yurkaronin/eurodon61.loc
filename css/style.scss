@@ -40,6 +40,16 @@
 
   &__logo-link {
     transition: all 0.3s;
+    display: block;
+
+    svg {
+      pointer-events: none;
+      transition: all 0.3s;
+
+      * {
+        transition: all 0.3s;
+      }
+    }
 
     &:hover {
       svg path {
@@ -135,6 +145,15 @@
       display: block;
     }
   }
+
+  .header__search-form {
+    box-shadow: none;
+    display: none;
+    border-top: 1px solid;
+    border-color: #EBEDEF;
+    position: initial;
+
+  }
 }
 
 .menu-search {
@@ -144,4 +163,38 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  svg {
+    pointer-events: none;
+    transition: all 0.3s;
+
+    * {
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover {
+
+    svg circle {
+      stroke: #007FAE;
+    }
+
+    svg path {
+      stroke: #007FAE;
+    }
+  }
+}
+
+.header-search-active {
+  .header--new {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .header__search-form {
+    display: block;
+
+  }
 }
