@@ -108,6 +108,14 @@
   line-height: 1.2;
   gap: 24px;
 }
+.header--new .search-form {
+  box-shadow: none;
+  display: none;
+  border-top: 1px solid;
+  border-color: #EBEDEF;
+  position: relative;
+  z-index: -1;
+}
 @media (max-width: 1390px) {
   .header--new__main-button {
     display: none;
@@ -160,27 +168,66 @@
   .header--new .main-nav-mobile__link {
     margin-bottom: 0;
   }
-  .header--new .main-nav-mobile__sublist {
-    gap: 12px;
-  }
-  .header--new header.sticky .header--new__top {
+  .header--new .sticky .header--new__top {
     padding-top: 0;
   }
+  .header--new .button-search {
+    background: transparent !important;
+    border-color: transparent !important;
+    border-bottom: none !important;
+    border-right: 1px solid !important;
+    border-color: #EBEDEF !important;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .header--new .button-menu,
 .header--new .button-search {
     height: 63px;
     width: 63px;
   }
+  .header--new__logo-link svg {
+    width: 140px;
+  }
+  .header--new .tel-link {
+    font-size: 16px;
+  }
+  .header--new__buttons {
+    gap: 16px;
+  }
+  .header--new__buttons .button {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 40px;
+    font-size: 12px;
+  }
+  .header--new .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header--new .mobile-main-nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
-.header--new .header__search-form {
-  box-shadow: none;
-  display: none;
-  border-top: 1px solid;
-  border-color: #EBEDEF;
-  position: relative;
-  z-index: -1;
+@media (max-width: 768px) {
+  .header--new .mobile-main-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .header--new__tel {
+    display: none;
+  }
+  .header--new__buttons {
+    display: none;
+  }
+}
+@media (max-width: 425px) {
+  .header--new .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .menu-search {
@@ -231,6 +278,11 @@ header.sticky .header--new__buttons .button {
   }
 }
 
+.mob-menu-open {
+  /* .header--new__top:after {
+    display: none !important;
+  } */
+}
 .mob-menu-open .header--new__top:after {
   content: "";
   display: block;

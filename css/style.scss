@@ -137,6 +137,15 @@
     gap: 24px;
   }
 
+  .search-form {
+    box-shadow: none;
+    display: none;
+    border-top: 1px solid;
+    border-color: #EBEDEF;
+    position: relative;
+    z-index: -1;
+  }
+
   @media (max-width: 1390px) {
     &__main-button {
       display: none;
@@ -202,34 +211,90 @@
       margin-bottom: 0;
     }
 
-    .main-nav-mobile__sublist {
-      gap: 12px;
-    }
-
-    header.sticky .header--new__top {
+    .sticky .header--new__top {
       padding-top: 0;
     }
 
+    .button-search {
+      background: transparent !important;
+      border-color: transparent !important;
+      border-bottom: none !important;
+      border-right: 1px solid !important;
+      border-color: #EBEDEF !important;
+    }
+
+
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 950px) {
 
     .button-menu,
     .button-search {
       height: 63px;
       width: 63px;
     }
+
+    &__logo-link svg {
+      width: 140px;
+    }
+
+    .tel-link {
+      font-size: 16px;
+    }
+
+    &__buttons {
+      gap: 16px;
+
+      .button {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 40px;
+        font-size: 12px;
+      }
+    }
+
+    .wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .mobile-main-nav {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
   }
 
-  .header__search-form {
-    box-shadow: none;
-    display: none;
-    border-top: 1px solid;
-    border-color: #EBEDEF;
-    position: relative;
-    z-index: -1;
+  @media (max-width: 768px) {
+    .mobile-main-nav {
+      width: 100%;
+      max-width: 100%;
+    }
   }
+
+  @media (max-width: 750px) {
+    &__tel {
+      display: none;
+    }
+
+    &__buttons {
+      display: none;
+    }
+
+  }
+
+  @media (max-width: 425px) {
+    .wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+
 }
+
+
 
 .menu-search {
   border: none;
@@ -317,4 +382,8 @@ header.sticky {
     border-bottom: 1px solid #ffffff;
     z-index: 11;
   }
+
+  /* .header--new__top:after {
+    display: none !important;
+  } */
 }
