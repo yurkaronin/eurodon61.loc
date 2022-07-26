@@ -187,6 +187,14 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .button-menu,
+    .button-search {
+      height: 63px;
+      width: 63px;
+    }
+  }
+
   .header__search-form {
     box-shadow: none;
     display: none;

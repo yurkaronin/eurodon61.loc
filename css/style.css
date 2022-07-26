@@ -154,6 +154,13 @@
     border-color: #EBEDEF;
   }
 }
+@media (max-width: 768px) {
+  .header--new .button-menu,
+.header--new .button-search {
+    height: 63px;
+    width: 63px;
+  }
+}
 .header--new .header__search-form {
   box-shadow: none;
   display: none;
