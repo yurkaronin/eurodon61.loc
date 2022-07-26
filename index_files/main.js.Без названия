@@ -22,6 +22,12 @@ menuButton.addEventListener('click', function (r) {
   mainMenu.classList.toggle('active');
   searchButton.classList.remove('active');
   headerSearch.classList.remove('active');
+
+  if (document.body.classList.contains('mob-menu-open')) {
+    document.body.classList.remove('mob-menu-open');
+  } else {
+    document.body.classList.add('mob-menu-open');
+  }
 });
 
 searchButton.addEventListener('click', function (r) {
@@ -259,7 +265,7 @@ if (reviewsSwiper) {
   });
 }
 
-// custom select 
+// custom select
 const element = document.querySelector('.js-select-branch');
 if (element) {
   const choices = new Choices(element);
@@ -277,7 +283,7 @@ if (requiredFields) {
 }
 // КОНЕЦ добавляем звёздочку к обязательным для заполнения лейблам
 
-// кастомные поля добавления файлов в форму 
+// кастомные поля добавления файлов в форму
 /*const inputElement = document.querySelector('input[type="file"]');
 const pond = FilePond.create(
   inputElement, {
@@ -299,7 +305,7 @@ const pond = FilePond.create(
 
 
 document.querySelector(".filepond--credits").remove();*/
-// КОНЕЦ кастомные поля добавления файлов в форму 
+// КОНЕЦ кастомные поля добавления файлов в форму
 // const custTabsItems = document.querySelectorAll('.new-accordion');
 // for (let custTabsItem of custTabsItems) {
 
